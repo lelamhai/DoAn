@@ -1,8 +1,17 @@
+#include "headers/mylib.h"
+#include "headersH/mylib.h"
+#include "headersD/mylib.h"
 #include "headers/graphics.h"
+#include <windows.h>
+#include <iostream>
 
-main( )
+using namespace std;
+
+int main()
 {
-    initwindow(800, 800);
-    line(200,210,400,410);
-    getch();
+    setRedText();
+    cout << " I want to be nice today!" << endl;
+
+    
+    return 0;
 }
