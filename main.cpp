@@ -1,6 +1,8 @@
-#include <iostream>
+#include "headers/graphics.h"
 
-int main() {
-    std::cout << "Hello World!";
-    return 0;
+main( )
+{
+    initwindow(800, 800);
+    line(200,210,400,410);
+    getch();
 }
