@@ -7,11 +7,9 @@
 
 using namespace std;
 
-int main()
+int main() 
 {
-    setRedText();
-    cout << " I want to be nice today!" << endl;
-
-    
-    return 0;
+	gotoXY(10,20);
+	system("pause");
+  	return 0;
 }
