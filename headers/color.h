@@ -1,24 +1,23 @@
 #include <windows.h>
 
-#define ColorCode_Back			0
-#define ColorCode_DarkBlue		1
-#define ColorCode_DarkGreen		2
-#define ColorCode_DarkCyan		3
-#define ColorCode_DarkRed		4
-#define ColorCode_DarkPink		5
-#define ColorCode_DarkYellow	6
-#define ColorCode_DarkWhite		7
-#define ColorCode_Grey			8
-#define ColorCode_Blue			9
-#define ColorCode_Green			10
-#define ColorCode_Cyan			11
-#define ColorCode_Red			12
-#define ColorCode_Pink			13
-#define ColorCode_Yellow		14
-#define ColorCode_White			15
-
-#define ColorCodeDefault		7
-
+enum ColorState {
+	ColorCode_Back			= 0,
+	ColorCode_DarkBlue		= 1,
+	ColorCode_DarkGreen		= 2,
+	ColorCode_DarkCyan		= 3,
+	ColorCode_DarkRed		= 4,
+	ColorCode_DarkPink		= 5,
+	ColorCode_DarkYellow	= 6,
+	ColorCode_DarkWhite		= 7,
+	ColorCode_Grey			= 8,
+	ColorCode_Blue			= 9,
+	ColorCode_Green			= 10,
+	ColorCode_Cyan			= 11,
+	ColorCode_Red			= 12,
+	ColorCode_Pink			= 13,
+	ColorCode_Yellow		= 14,
+	ColorCode_White			= 15
+};
 
 void setBlackText()
 {
