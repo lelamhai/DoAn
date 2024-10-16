@@ -2,38 +2,6 @@
 #include <iostream>
 using namespace std;
 
-#pragma region Color
-void setBlueText()
-{
-	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 9);
-}
-
-void setGreenText()
-{
-	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 10);
-}
-
-void setRedText()
-{
-	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 12);
-}
-
-void setPinkText()
-{
-	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 13);
-}
-
-void setColorText(int x)
-{
-	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), x);
-}
-
-void BackgroundColor()
-{
-	system("COLOR BC");
-}
-#pragma endregion
-
 #pragma region Position
 void gotoXY(int x, int y) 
 {
@@ -61,3 +29,28 @@ void setSizeWindow(int width, int height)
    	MoveWindow(console, ConsoleRect.left, ConsoleRect.top, width, height, TRUE);
 }
 #pragma endregion
+
+#pragma region Cursor
+void ShowCur(bool CursorVisibility)
+{
+	HANDLE handle = GetStdHandle(STD_OUTPUT_HANDLE);
+	CONSOLE_CURSOR_INFO cursor = { 1, CursorVisibility };
+	SetConsoleCursorInfo(handle, &cursor);
+}
+#pragma endregion
+
+void clrscr()
+{
+	CONSOLE_SCREEN_BUFFER_INFO	csbiInfo;
+	HANDLE	hConsoleOut;
+	COORD	Home = { 0,0 };
+	DWORD	dummy;
+
+	hConsoleOut = GetStdHandle(STD_OUTPUT_HANDLE);
+	GetConsoleScreenBufferInfo(hConsoleOut, &csbiInfo);
+
+	FillConsoleOutputCharacter(hConsoleOut, ' ', csbiInfo.dwSize.X * csbiInfo.dwSize.Y, Home, &dummy);
+	csbiInfo.dwCursorPosition.X = 0;
+	csbiInfo.dwCursorPosition.Y = 0;
+	SetConsoleCursorPosition(hConsoleOut, csbiInfo.dwCursorPosition);
+}
