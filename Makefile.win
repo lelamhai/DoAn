@@ -4,8 +4,8 @@
 CPP      = g++.exe
 CC       = gcc.exe
 WINDRES  = windres.exe
-OBJ      = main.o
-LINKOBJ  = main.o
+OBJ      = main.o color.o draw.o keyboard.o windows.o configApp.o Loading.o Login.o ManageClass.o footer.o header.o sidebar.o
+LINKOBJ  = main.o color.o draw.o keyboard.o windows.o configApp.o Loading.o Login.o ManageClass.o footer.o header.o sidebar.o
 LIBS     = -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib" -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc
 INCS     = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
 CXXINCS  = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
@@ -26,3 +26,36 @@ $(BIN): $(OBJ)
 
 main.o: main.cpp
 	$(CPP) -c main.cpp -o main.o $(CXXFLAGS)
+
+color.o: color.cpp
+	$(CPP) -c color.cpp -o color.o $(CXXFLAGS)
+
+draw.o: draw.cpp
+	$(CPP) -c draw.cpp -o draw.o $(CXXFLAGS)
+
+keyboard.o: keyboard.cpp
+	$(CPP) -c keyboard.cpp -o keyboard.o $(CXXFLAGS)
+
+windows.o: windows.cpp
+	$(CPP) -c windows.cpp -o windows.o $(CXXFLAGS)
+
+configApp.o: configApp.cpp
+	$(CPP) -c configApp.cpp -o configApp.o $(CXXFLAGS)
+
+Loading.o: Loading.cpp
+	$(CPP) -c Loading.cpp -o Loading.o $(CXXFLAGS)
+
+Login.o: Login.cpp
+	$(CPP) -c Login.cpp -o Login.o $(CXXFLAGS)
+
+ManageClass.o: ManageClass.cpp
+	$(CPP) -c ManageClass.cpp -o ManageClass.o $(CXXFLAGS)
+
+footer.o: footer.cpp
+	$(CPP) -c footer.cpp -o footer.o $(CXXFLAGS)
+
+header.o: header.cpp
+	$(CPP) -c header.cpp -o header.o $(CXXFLAGS)
+
+sidebar.o: sidebar.cpp
+	$(CPP) -c sidebar.cpp -o sidebar.o $(CXXFLAGS)

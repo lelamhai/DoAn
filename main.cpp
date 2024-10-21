@@ -1,4 +1,5 @@
 #include "configApp.h"
+#include "Login.h"
 #include "ManageClass.h"
 #include <conio.h>
 #include <iostream>
@@ -10,9 +11,13 @@ int main()
 	ConfigApp config;
 	config.init();
 
-	ManageClassroom* lop = new ManageClassroom();
+	Login* login = new Login();
+	login->mainLogin();
+	delete login;
+
+	/*ManageClassroom* lop = new ManageClassroom();
 	lop->mainClassroom();
-	delete lop;
+	delete lop;*/
 
 	_getch();
 	system("pause");
