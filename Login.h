@@ -1,5 +1,5 @@
 #pragma once
-#include "PageTemplate.h"
+#include "Template.h"
 
 
 class Login : public PageTemplate
