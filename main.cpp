@@ -11,13 +11,9 @@ int main()
 	ConfigApp config;
 	config.init();
 
-	Login* login = new Login();
-	login->mainLogin();
-	delete login;
-
-	/*ManageClassroom* lop = new ManageClassroom();
+	ManageClassroom* lop = new ManageClassroom();
 	lop->mainClassroom();
-	delete lop;*/
+	delete lop;
 
 	_getch();
 	system("pause");
